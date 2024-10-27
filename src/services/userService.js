@@ -8,6 +8,9 @@ const UserService = {
   createUser: async (name, email) => {
     return await UserModel.createUser(name, email);
   },
+  deleteUser:  async (userId) => {
+    await UserModel.deleteUser(userId);
+  },
   getUserPreferences: async (userId) => {
     return await UserPreferencesModel.getUserPreferences(userId);
   },

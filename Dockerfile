@@ -8,7 +8,7 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 
 # Install the project dependencies
-RUN npm install
+RUN npm install --save express
 
 # Copy the rest of the project files to the working directory
 COPY . .

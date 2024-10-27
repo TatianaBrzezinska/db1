@@ -22,6 +22,16 @@ router.post('/', async (req, res) => {
   }
 });
 
+router.delete('/:userId', async (req, res) => {
+  const { userId } = req.params;
+  try {
+    await UserService.deleteUser(userId);
+    res.status(200).send('Success');
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 router.get('/:userId/preferences', async (req, res) => {
   const { userId } = req.params;
   try {
@@ -42,5 +52,6 @@ router.post('/:userId/preferences', async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 });
+
 
 module.exports = router;
