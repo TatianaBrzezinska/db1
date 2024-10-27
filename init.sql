@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS UserPreferences (
     PreferenceID uuid DEFAULT uuid_generate_v4() PRIMARY KEY,
     LanguageCode VARCHAR(100),
     PreferredCommunication INT,
-    UserId INT,
+    UserId uuid,
     FOREIGN KEY (UserId) REFERENCES Users(ID) ON DELETE CASCADE
 );
 
